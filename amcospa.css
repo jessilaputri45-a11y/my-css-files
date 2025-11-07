@@ -1,0 +1,113 @@
+/* ---------------------- */
+/* Ã°Å¸Å½Â¨ GIMBAL4D MAIN STYLE  */
+/* ---------------------- */
+
+/* Cookie consent display */
+.cookieconsent-optin,
+.cookieconsent-optin-preferences,
+.cookieconsent-optin-statistics,
+.cookieconsent-optin-marketing {
+  display: block;
+  display: initial;
+}
+
+.cookieconsent-optout-preferences,
+.cookieconsent-optout-statistics,
+.cookieconsent-optout-marketing,
+.cookieconsent-optout {
+  display: none;
+}
+
+/* Root color & theme variable */
+:root {
+  --color-green-500: #51a31d;
+  --color-white: #fff;
+  /* semua variabel dari blok :root yang panjang itu lu copy di sini */
+}
+
+/* Tombol brand */
+.brand-neue-button {
+  gap: var(--spacing-2x);
+  border-radius: var(--roundness-subtle);
+  background: var(--color-interactive-primary);
+  color: var(--color-content-brand);
+  font-family: PolySans-Median;
+  font-size: var(--font-size-2x);
+  letter-spacing: .02em;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.brand-neue-button:hover,
+.brand-neue-button:active,
+.brand-neue-button:focus {
+  background: var(--color-interactive-primary-hover);
+}
+
+.brand-neue-button__open-in-new::after {
+  font-size: 0;
+  margin-left: 5px;
+  vertical-align: sub;
+  content: url(data:image/svg+xml,<svg width="14" height="14" ...>); /* ini biarin tetap inline */
+}
+
+/* Fancybox margin */
+.fancybox-margin {
+  margin-right: 15px;
+}
+
+/* Background utama */
+body {
+  background-color: #e100ff;
+  background-image: url(https://amcospa.cl/img/bg-naga-stone.webp);
+  background-attachment: fixed;
+}
+
+/* Header gradien */
+.site-header,
+.global-header,
+.context-header,
+.site-header__sites,
+.site-header__categories {
+  background-color: #23ff98 !important;
+  background-image: linear-gradient(315deg, #ffea70 0%, #ffd700 74%) !important;
+}
+
+/* Box blur transparan */
+.item-preview,
+.purchase-panel,
+.box--no-padding {
+  background-color: rgba(255,255,255,.1) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255,255,255,.2) !important;
+  box-shadow: 0 4px 30px rgba(0,0,0,.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efek kilau */
+.item-preview::before,
+.purchase-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.37) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0%   { left: -150%; }
+  60%  { left: 150%; }
+  100% { left: 150%; }
+}
